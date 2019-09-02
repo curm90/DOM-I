@@ -94,6 +94,21 @@ contactParagraphs[1].textContent = siteContent.contact.email;
 // Select footer element
 document.querySelector('footer p').textContent = siteContent.footer.copyright;
 
+// Change color of nav items
+navItems.forEach(item => item.style.color = 'green');
+
+// Add new items to nav
+const nav = document.querySelector('nav');
+
+const lastNavEl = document.createElement('a');
+lastNavEl.textContent = 'World';
+lastNavEl.style.color = 'green';
+nav.appendChild(lastNavEl);
+
+const firstNavEl = document.createElement('a');
+firstNavEl.textContent = 'Hello';
+firstNavEl.style.color = 'green';
+nav.prepend(firstNavEl);
 
 
 
