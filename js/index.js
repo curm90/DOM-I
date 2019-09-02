@@ -106,6 +106,16 @@ topContentHeaders[1].textContent = siteContent['main-content']['about-h4'];
 topContentParagraphs[0].textContent = siteContent['main-content']['features-content'];
 topContentParagraphs[1].textContent = siteContent['main-content']['about-content'];
 
+// Add bottom content
+bottomContentHeaders[0].textContent = siteContent['main-content']['services-h4'];
+bottomContentHeaders[1].textContent = siteContent['main-content']['product-h4'];
+bottomContentHeaders[2].textContent = siteContent['main-content']['vision-h4'];
+bottomContentParagraphs[0].textContent = siteContent['main-content']['services-content'];
+bottomContentParagraphs[1].textContent = siteContent['main-content']['product-content'];
+bottomContentParagraphs[2].textContent = siteContent['main-content']['services-content'];
+
+
+
 
 
 
