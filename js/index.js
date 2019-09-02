@@ -56,7 +56,8 @@ navItems.forEach((item, i) => {
 // Add cta elements
 const ctaHeader = document.querySelector('.cta-text h1')
 ctaHeader.textContent = siteContent.cta.h1;
-document.querySelector('.cta-text button').textContent = siteContent.cta.button;
+const ctaButton = document.querySelector('.cta-text button')
+ctaButton.textContent = siteContent.cta.button;
 
 // Add new line to cta title
 ctaHeader.innerHTML = siteContent.cta.h1.split(' ').join('<br>');
@@ -109,6 +110,11 @@ const firstNavEl = document.createElement('a');
 firstNavEl.textContent = 'Hello';
 firstNavEl.style.color = 'green';
 nav.prepend(firstNavEl);
+
+// Stretch styles
+ctaHeader.style.color = 'goldenrod';
+document.querySelectorAll('h4').forEach(item => item.style.color = 'goldenrod');
+ctaButton.style['border-radius'] = '.6rem';
 
 
 
