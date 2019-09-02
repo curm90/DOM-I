@@ -54,8 +54,12 @@ navItems.forEach((item, i) => {
 })
 
 // Add cta elements
-document.querySelector('.cta-text h1').textContent = siteContent.cta.h1;
+const ctaHeader = document.querySelector('.cta-text h1')
+ctaHeader.textContent = siteContent.cta.h1;
 document.querySelector('.cta-text button').textContent = siteContent.cta.button;
+
+// Add new line to cta title
+ctaHeader.innerHTML = siteContent.cta.h1.split(' ').join('<br>');
 
 // Add top content
 const topContentHeaders = document.querySelectorAll('.top-content h4');
@@ -83,6 +87,7 @@ document.querySelector('.contact h4').textContent = siteContent.contact['contact
 // Add contact paragraghs
 const contactParagraphs = document.querySelectorAll('.contact p');
 contactParagraphs[0].textContent = siteContent.contact.address;
+contactParagraphs[0].innerHTML = siteContent.contact.address.split('Street').join('Street' + '<br>');
 contactParagraphs[2].textContent = siteContent.contact.phone;
 contactParagraphs[1].textContent = siteContent.contact.email;
 
