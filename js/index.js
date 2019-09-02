@@ -38,5 +38,92 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+const logo = document.getElementById('logo-img');
+logo.setAttribute('src', siteContent.nav['img-src']);
+
+const ctaImg = document.getElementById('cta-img');
+ctaImg.src = siteContent.cta['img-src'];
+
+const middleImg = document.getElementById('middle-img');
+middleImg.src = siteContent['main-content']['middle-img-src'];
+
+// Add nav items to page
+const navItems = document.querySelectorAll('nav a');
+navItems.forEach((item, i) => {
+  item.innerHTML = siteContent.nav['nav-item-' + (1 + i)]
+})
+
+// Add cta elements
+const ctaHeader = document.querySelector('.cta-text h1')
+ctaHeader.textContent = siteContent.cta.h1;
+const ctaButton = document.querySelector('.cta-text button')
+ctaButton.textContent = siteContent.cta.button;
+
+// Add new line to cta title
+ctaHeader.innerHTML = siteContent.cta.h1.split(' ').join('<br>');
+
+// Add top content
+const topContentHeaders = document.querySelectorAll('.top-content h4');
+topContentHeaders[0].textContent = siteContent['main-content']['features-h4'];
+topContentHeaders[1].textContent = siteContent['main-content']['about-h4'];
+
+const topContentParagraphs = document.querySelectorAll('.top-content p');
+topContentParagraphs[0].textContent = siteContent['main-content']['features-content'];
+topContentParagraphs[1].textContent = siteContent['main-content']['about-content'];
+
+// Add bottom content
+const bottomContentHeaders = document.querySelectorAll('.bottom-content h4');
+bottomContentHeaders[0].textContent = siteContent['main-content']['services-h4'];
+bottomContentHeaders[1].textContent = siteContent['main-content']['product-h4'];
+bottomContentHeaders[2].textContent = siteContent['main-content']['vision-h4'];
+
+const bottomContentParagraphs = document.querySelectorAll('.bottom-content p');
+bottomContentParagraphs[0].textContent = siteContent['main-content']['services-content'];
+bottomContentParagraphs[1].textContent = siteContent['main-content']['product-content'];
+bottomContentParagraphs[2].textContent = siteContent['main-content']['vision-content'];
+
+// Add contact header
+document.querySelector('.contact h4').textContent = siteContent.contact['contact-h4'];
+
+// Add contact paragraghs
+const contactParagraphs = document.querySelectorAll('.contact p');
+contactParagraphs[0].textContent = siteContent.contact.address;
+contactParagraphs[0].innerHTML = siteContent.contact.address.split('Street').join('Street' + '<br>');
+contactParagraphs[1].textContent = siteContent.contact.phone;
+contactParagraphs[2].textContent = siteContent.contact.email;
+
+// Select footer element
+document.querySelector('footer p').textContent = siteContent.footer.copyright;
+
+// Change color of nav items
+navItems.forEach(item => item.style.color = 'green');
+
+// Add new items to nav
+const nav = document.querySelector('nav');
+
+const lastNavEl = document.createElement('a');
+lastNavEl.textContent = 'World';
+lastNavEl.style.color = 'green';
+nav.appendChild(lastNavEl);
+
+const firstNavEl = document.createElement('a');
+firstNavEl.textContent = 'Hello';
+firstNavEl.style.color = 'green';
+nav.prepend(firstNavEl);
+
+// Stretch styles
+ctaHeader.style.color = 'goldenrod';
+document.querySelectorAll('h4').forEach(item => item.style.color = 'goldenrod');
+ctaButton.style['border-radius'] = '.6rem';
+ctaButton.textContent = 'Change Styles';
+
+ctaButton.addEventListener('click', (e) => {
+  navItems.forEach(item => {
+    if (item.style.color === 'green') {
+      item.style.color = 'goldenrod'
+    } else {
+      item.style.color = 'green'
+    }
+  });
+})
+
