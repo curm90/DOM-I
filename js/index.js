@@ -47,87 +47,47 @@ ctaImg.src = siteContent.cta['img-src'];
 const middleImg = document.getElementById('middle-img');
 middleImg.src = siteContent['main-content']['middle-img-src'];
 
-// Add id's to all elements that need selecting indivdually
+// Add nav items to page
 const navItems = document.querySelectorAll('nav a');
 navItems.forEach((item, i) => {
-  i += 1;
-  item.classList.add(`nav-item-${i}`);
+  item.innerHTML = siteContent.nav['nav-item-' + (1 + i)]
 })
 
+// Add cta elements
+document.querySelector('.cta-text h1').textContent = siteContent.cta.h1;
+document.querySelector('.cta-text button').textContent = siteContent.cta.button;
+
+// Add top content
 const topContentHeaders = document.querySelectorAll('.top-content h4');
-topContentHeaders.forEach((item, i) => {
-  i += 1;
-  item.id = 'topHeading' + i;
-})
-
-const topContentParagraphs = document.querySelectorAll('.top-content p')
-topContentParagraphs.forEach((item, i) => {
-  i += 1;
-  item.id = 'topParagragh' + i;
-})
-
-const bottomContentHeaders = document.querySelectorAll('.bottom-content h4');
-bottomContentHeaders.forEach((item, i) => {
-  i += 1;
-  item.id = 'bottomHeading' + i;
-})
-
-const bottomContentParagraphs = document.querySelectorAll('.bottom-content p');
-bottomContentParagraphs.forEach((item, i) => {
-  i += 1;
-  item.id = 'bottomParagraph' + i;
-})
-
-const contactParagraph = document.querySelectorAll('.contact p');
-contactParagraph.forEach((item, i) => {
-  i += 1;
-  item.id = 'contactParagraph' + i;
-})
-
-// Add nav items
-navItems[0].textContent = siteContent.nav['nav-item-1'];
-navItems[1].textContent = siteContent.nav['nav-item-2'];
-navItems[2].textContent = siteContent.nav['nav-item-3'];
-navItems[3].textContent = siteContent.nav['nav-item-4'];
-navItems[4].textContent = siteContent.nav['nav-item-5'];
-navItems[5].textContent = siteContent.nav['nav-item-6'];
-
-// Select cta elements
-const ctaHeader = document.querySelector('.cta-text h1');
-const ctaButton = document.querySelector('.cta-text button');
-
-// Add cta elements to DOM
-ctaHeader.textContent = siteContent.cta.h1;
-ctaButton.textContent = siteContent.cta.button;
-
-// Add top content 
 topContentHeaders[0].textContent = siteContent['main-content']['features-h4'];
 topContentHeaders[1].textContent = siteContent['main-content']['about-h4'];
+
+const topContentParagraphs = document.querySelectorAll('.top-content p');
 topContentParagraphs[0].textContent = siteContent['main-content']['features-content'];
 topContentParagraphs[1].textContent = siteContent['main-content']['about-content'];
 
 // Add bottom content
+const bottomContentHeaders = document.querySelectorAll('.bottom-content h4');
 bottomContentHeaders[0].textContent = siteContent['main-content']['services-h4'];
 bottomContentHeaders[1].textContent = siteContent['main-content']['product-h4'];
 bottomContentHeaders[2].textContent = siteContent['main-content']['vision-h4'];
+
+const bottomContentParagraphs = document.querySelectorAll('.bottom-content p');
 bottomContentParagraphs[0].textContent = siteContent['main-content']['services-content'];
 bottomContentParagraphs[1].textContent = siteContent['main-content']['product-content'];
-bottomContentParagraphs[2].textContent = siteContent['main-content']['services-content'];
+bottomContentParagraphs[2].textContent = siteContent['main-content']['vision-content'];
 
-// Select contact header
-const contactHeader = document.querySelector('.contact h4');
+// Add contact header
+document.querySelector('.contact h4').textContent = siteContent.contact['contact-h4'];
 
-
-// Add contact content
-contactHeader.textContent = siteContent.contact['contact-h4'];
-contactParagraph[0].textContent = siteContent.contact.address;
-contactParagraph[1].textContent = siteContent.contact.phone;
-contactParagraph[2].textContent = siteContent.contact.email;
+// Add contact paragraghs
+const contactParagraphs = document.querySelectorAll('.contact p');
+contactParagraphs[0].textContent = siteContent.contact.address;
+contactParagraphs[2].textContent = siteContent.contact.phone;
+contactParagraphs[1].textContent = siteContent.contact.email;
 
 // Select footer element
-const footerParagraph = document.querySelector('footer p');
-footerParagraph.textContent = siteContent.footer.copyright;
-
+document.querySelector('footer p').textContent = siteContent.footer.copyright;
 
 
 
