@@ -88,8 +88,8 @@ document.querySelector('.contact h4').textContent = siteContent.contact['contact
 const contactParagraphs = document.querySelectorAll('.contact p');
 contactParagraphs[0].textContent = siteContent.contact.address;
 contactParagraphs[0].innerHTML = siteContent.contact.address.split('Street').join('Street' + '<br>');
-contactParagraphs[2].textContent = siteContent.contact.phone;
-contactParagraphs[1].textContent = siteContent.contact.email;
+contactParagraphs[1].textContent = siteContent.contact.phone;
+contactParagraphs[2].textContent = siteContent.contact.email;
 
 // Select footer element
 document.querySelector('footer p').textContent = siteContent.footer.copyright;
