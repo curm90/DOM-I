@@ -78,7 +78,7 @@ bottomContentParagraphs.forEach((item, i) => {
   item.id = 'bottomParagraph' + i;
 })
 
-const contactParagraph = document.querySelectorAll('.bottom-content p');
+const contactParagraph = document.querySelectorAll('.contact p');
 contactParagraph.forEach((item, i) => {
   i += 1;
   item.id = 'contactParagraph' + i;
@@ -113,6 +113,17 @@ bottomContentHeaders[2].textContent = siteContent['main-content']['vision-h4'];
 bottomContentParagraphs[0].textContent = siteContent['main-content']['services-content'];
 bottomContentParagraphs[1].textContent = siteContent['main-content']['product-content'];
 bottomContentParagraphs[2].textContent = siteContent['main-content']['services-content'];
+
+// Select contact header
+const contactHeader = document.querySelector('.contact h4');
+
+
+// Add contact content
+contactHeader.textContent = siteContent.contact['contact-h4'];
+contactParagraph[0].textContent = siteContent.contact.address;
+contactParagraph[1].textContent = siteContent.contact.phone;
+contactParagraph[2].textContent = siteContent.contact.email;
+
 
 
 
