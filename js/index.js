@@ -40,3 +40,40 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+// Add id's to all elements that need selecting indivdually
+const navItems = document.querySelectorAll('nav a');
+navItems.forEach((item, i) => {
+  i += 1;
+  item.classList.add(`nav-item-${i}`);
+})
+
+const topContentHeaders = document.querySelectorAll('.top-content h4');
+topContentHeaders.forEach((item, i) => {
+  i += 1;
+  item.id = 'topHeading' + i;
+})
+
+const topContentParagraphs = document.querySelectorAll('.top-content p')
+topContentParagraphs.forEach((item, i) => {
+  i += 1;
+  item.id = 'topParagragh' + i;
+})
+
+const bottomContentHeaders = document.querySelectorAll('.bottom-content h4');
+bottomContentHeaders.forEach((item, i) => {
+  i += 1;
+  item.id = 'bottomHeading' + i;
+})
+
+const bottomContentParagraphs = document.querySelectorAll('.bottom-content p');
+bottomContentParagraphs.forEach((item, i) => {
+  i += 1;
+  item.id = 'bottomParagraph' + i;
+})
+
+const contactParagraph = document.querySelectorAll('.bottom-content p');
+contactParagraph.forEach((item, i) => {
+  i += 1;
+  item.id = 'contactParagraph' + i;
+})
