@@ -115,6 +115,15 @@ nav.prepend(firstNavEl);
 ctaHeader.style.color = 'goldenrod';
 document.querySelectorAll('h4').forEach(item => item.style.color = 'goldenrod');
 ctaButton.style['border-radius'] = '.6rem';
+ctaButton.textContent = 'Change Styles';
 
-
+ctaButton.addEventListener('click', (e) => {
+  navItems.forEach(item => {
+    if (item.style.color === 'green') {
+      item.style.color = 'goldenrod'
+    } else {
+      item.style.color = 'green'
+    }
+  });
+})
 
